@@ -5,8 +5,25 @@
 # been used. For example, if the PingDirectory.lic file is placed in the
 # misc-files directory, it can be referred to in setup-arguments.txt using
 # '--licenseKeyFile ${PING_PROFILE_ROOT}/misc-files/PingDirectory.lic'
-    --baseDN "dc=americanfinancing,dc=com"  \
-    --addBaseEntry  \
-    --maxHeapSize 768m  \
-    --primeDB  \
-    --no-prompt 
+  setup-arguments.txt: |-
+      --verbose \
+      --acceptLicense \
+      --skipPortCheck \
+      --instanceName ${INSTANCE_NAME} \
+      --location Docker \
+      --ldapPort ${LDAP_PORT} \
+      --ldapsPort ${LDAPS_PORT} \
+      --httpsPort ${HTTPS_PORT} \
+      --enableStartTLS \
+      --maxHeapSize ${MAX_HEAP_SIZE} \
+      --jvmTuningParameter AGGRESSIVE \
+      --usePkcs12Keystore /opt/staging/instance/config/keystore.p12 \
+      --keyStorePasswordFile /opt/staging/instance/config/keystore.pin \
+      --usePkcs12TrustStore /opt/staging/instance/config/truststore.p12 \
+      --trustStorePasswordFile /opt/staging/instance/config/truststore.pin \
+      --certNickname ping \
+      --rootUserDN "cn=administrator" \
+      --rootUserPasswordFile "/opt/staging/.sec/root-user-password" \
+      --encryptDataWithPassphraseFromFile /opt/staging/.sec/encryption-password   \
+      --baseDN "dc=bankofthewest,dc=com"   \
+      --addBaseEntry
