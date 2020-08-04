@@ -1,0 +1,12 @@
+# Arguments requiring file values, such as --licenseKeyFile, will need to have
+# their values adjusted to be used in the server profile. Files such as
+# the license key file and any password files can be added to
+# the profile's misc-files directory, and then removed after they have
+# been used. For example, if the PingDirectory.lic file is placed in the
+# misc-files directory, it can be referred to in setup-arguments.txt using
+# '--licenseKeyFile ${PING_PROFILE_ROOT}/misc-files/PingDirectory.lic'
+    --baseDN "dc=americanfinancing,dc=com"  \
+    --addBaseEntry  \
+    --maxHeapSize 768m  \
+    --primeDB  \
+    --no-prompt 
