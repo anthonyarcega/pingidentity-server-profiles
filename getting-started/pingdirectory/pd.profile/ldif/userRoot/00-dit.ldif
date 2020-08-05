@@ -1,4 +1,8 @@
 dn: dc=bankofthewest,dc=com
+objectClass: domain
+dc: bankofthewest
+
+dn: dc=bankofthewest,dc=com
 objectClass: top
 objectClass: domain
 dc: example
