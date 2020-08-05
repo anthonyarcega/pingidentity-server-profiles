@@ -5,7 +5,6 @@
 # been used. For example, if the PingDirectory.lic file is placed in the
 # misc-files directory, it can be referred to in setup-arguments.txt using
 # '--licenseKeyFile ${PING_PROFILE_ROOT}/misc-files/PingDirectory.lic'
-  setup-arguments.txt: |-
       --verbose \
       --acceptLicense \
       --skipPortCheck \
