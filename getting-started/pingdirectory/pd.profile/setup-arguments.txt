@@ -4,7 +4,7 @@
 # the profile's misc-files directory, and then removed after they have
 # been used. For example, if the PingDirectory.lic file is placed in the
 # misc-files directory, it can be referred to in setup-arguments.txt using
-# '--licenseKeyFile ${PING_PROFILE_ROOT}/misc-files/PingDirectory.lic'
+# '--licenseKeyFile ${PING_PROFILE_ROOT}/misc-files/PingDirectory.lic'ß
       --verbose \
       --acceptLicense \
       --skipPortCheck \
@@ -16,13 +16,10 @@
       --enableStartTLS \
       --maxHeapSize ${MAX_HEAP_SIZE} \
       --jvmTuningParameter AGGRESSIVE \
-      --usePkcs12Keystore /opt/staging/instance/config/keystore.p12 \
-      --keyStorePasswordFile /opt/staging/instance/config/keystore.pin \
-      --usePkcs12TrustStore /opt/staging/instance/config/truststore.p12 \
-      --trustStorePasswordFile /opt/staging/instance/config/truststore.pin \
-      --certNickname ping \
-      --rootUserDN "cn=administrator" \
-      --rootUserPasswordFile "/opt/staging/.sec/root-user-password" \
-      --encryptDataWithPassphraseFromFile /opt/staging/.sec/encryption-password   \
-      --baseDN "dc=bankofthewest,dc=com"   \
+      --generateSelfSignedCertificate \
+      --certNickname server-cert \
+      --rootUserDN cn=administrator \
+      --rootUserPasswordFile /opt/staging/.sec/root-user-password \
+      --encryptDataWithPassphraseFromFile /opt/staging/.sec/encryption-password \
+      --baseDN "dc=bankofthewest,dc=com" \
       --addBaseEntry
