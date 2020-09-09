@@ -1,0 +1,2 @@
+# Test file
+# - observe if this file ends up in /opt/out/instance/config, accessible to the pod
