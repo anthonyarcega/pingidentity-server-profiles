@@ -1,2 +1,3 @@
 export MAX_HEAP_SIZE=768m
 export USER_BASE_DN=dc=bankofthewest,dc=com
+export ENCRYPTION_PASSWORD_FILE=/opt/staging/.sec/aa-password
